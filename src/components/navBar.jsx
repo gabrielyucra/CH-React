@@ -7,15 +7,9 @@ const NavBar = ()=>
         <ul className="nav-order">
             <li>ReacTienda</li>
             <div className='li-order'>
-                <li>
-                    <a href="#">Inicio</a>
-                </li>
-                <li> 
-                    <a href="#">Productos</a>
-                </li>
-                <li>
-                    <a href="#">Contacto</a>
-                </li>
+                <li>Inicio</li>
+                <li>Productos</li>
+                <li>Contacto</li>
             </div>
             <CartWidget/>
         </ul>

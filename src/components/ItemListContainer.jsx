@@ -1,7 +1,7 @@
 const ItemListContainer =(props)=>{
     return(
         <>
-            <p>{props.greeting}</p>
+            <h1 className="text-center">{props.greeting}</h1>
         </>
     );
 }
