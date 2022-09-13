@@ -3,6 +3,10 @@
   padding: 0;
   list-style: none;
 }
+body{
+  background-color: rgb(219, 194, 194);
+}
+
 /* -------NAVBAR-------------------------------------------*/
 nav{
   background-color: rgb(74, 30, 197);
@@ -31,4 +35,6 @@ img{
   margin-right: 15px;
 }
 /* -------NAVBAR-------------------------------------------//////////////*/
-
+p{
+  margin: 0 15px;
+}
