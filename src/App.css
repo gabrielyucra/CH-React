@@ -38,3 +38,10 @@ img{
 p{
   margin: 0 15px;
 }
+.item{
+  display: flex;
+}
+.item img{
+  height: 250px;
+  width: 200px;
+}
