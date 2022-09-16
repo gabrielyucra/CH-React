@@ -18,8 +18,8 @@ const ItemCount =()=>{
         }
 
         return(
-            <div>
-                <div className="d-flex ">
+            <div className="count">
+                <div>
                     <button onClick={restarCant} className="btn btn-secondary">-</button>
                     <p>{cantidad}</p>
                     <button onClick={sumarCant} className="btn btn-secondary">+</button>
