@@ -1,25 +1,33 @@
 import { useEffect, useState } from "react";
 import customFetch from "../utils/customFetch";
 import { products } from "../utils/products";
-import ItemCount from "./ItemCount";
 import ItemList from "./ItemList";
-const ItemListContainer =(props)=>{        
+import {useParams} from 'react-router-dom'
+
+const ItemListContainer =()=>{        
     
     const[datos, setDatos] = useState([]);
     const [cargando, setCargando] = useState(false)
-    
+    const { id } = useParams();
+
     useEffect(() => {
         setCargando(true)
-        customFetch(2000, products)
+        if(id)
+        {
+            customFetch(2000, products.filter(item=> item.categoryId == id))
+                .then(response => setDatos(response))
+                .catch(err=> console.log(err))
+                .finally(()=>setCargando(false))
+        } else{
+            customFetch(2000, products)
             .then(response => setDatos(response))
             .catch(err=> console.log(err))
             .finally(()=>setCargando(false))
-    }, []);
+        }
+    }, [id]);
     
     return(
         <>
-            <h1 className="text-center">{props.greeting}</h1>
-            <ItemCount/>
             {cargando ? <h1>Cargando...</h1> : <ItemList items={datos}/>}
         </>
     );

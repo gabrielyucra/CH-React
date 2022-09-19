@@ -6,6 +6,13 @@
 body{
   background-color: rgb(219, 194, 194);
 }
+a{
+  text-decoration: none;
+  color: white;
+}
+a:hover{
+  color: rgb(214, 214, 205);
+}
 
 /* -------NAVBAR-------------------------------------------*/
 nav{

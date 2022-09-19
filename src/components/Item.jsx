@@ -1,3 +1,4 @@
+import {Link} from "react-router-dom"
 
 const Item = ({product}) => {
     return (
@@ -7,7 +8,7 @@ const Item = ({product}) => {
                 <h3>{product.title}</h3>
                 <p>{product.description}</p>
                 <p>Precio ${product.price}</p>
-                <button className="btn btn-primary">Detalles</button>
+                <Link to={`/item/${product.id}`}><button className="btn btn-primary">Detalles</button></Link>
             </div>
         </div>
     );

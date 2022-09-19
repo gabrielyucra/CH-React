@@ -9,8 +9,7 @@ const ItemDetail = ({item}) => {
                 <h1>{item.title}</h1>
                 <h3>{item.description}</h3>
                 <h4>${item.price}</h4>
-                <ItemCount></ItemCount>
-
+                <ItemCount/>
             </div>
         </div>
     );
