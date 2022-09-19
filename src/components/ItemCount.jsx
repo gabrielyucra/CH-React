@@ -1,30 +1,33 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const ItemCount =()=>{
+const ItemCount =({ stock = 5, initial = 1,  onAdd })=>{
 
     const [cantidad, setCantidad] = useState(0);
 
-        const restarCant= ()=>{
-            if(cantidad>0){
-                setCantidad(cantidad-1)
+        useEffect(() => {
+            setCantidad(initial);
+        },[]);
+    
+        const sumCant = () => {
+            if (cantidad < stock) {
+                setCantidad(cantidad + 1);
             }
         }
-        const sumarCant= ()=>{
-            if(cantidad<5)
-                setCantidad(cantidad+1)
-        }
-        const cartel =()=>{
-            alert(`Haz seleccionado ${cantidad} productos`)
+        
+        const restCant = () => {
+            if (cantidad > initial) {
+                setCantidad(cantidad - 1);
+            }
         }
 
         return(
             <div className="count">
                 <div>
-                    <button onClick={restarCant} className="btn btn-secondary">-</button>
+                    <button onClick={restCant} className="btn btn-secondary">-</button>
                     <p>{cantidad}</p>
-                    <button onClick={sumarCant} className="btn btn-secondary">+</button>
+                    <button onClick={sumCant} className="btn btn-secondary">+</button>
                 </div>
-                <button onClick={cartel} className="btn btn-success">Agregar al carrito</button>
+                <button onClick={() => onAdd(cantidad)} className="btn btn-success">Agregar al carrito</button>
             </div>
         );
 }
