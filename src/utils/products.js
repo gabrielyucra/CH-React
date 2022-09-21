@@ -4,6 +4,7 @@ const products = [{
     description: "Manaos ideal para quitar la sed",
     price: 150,
     categoryId: 14,
+    stock: 30,
     pictureUrl: "https://http2.mlstatic.com/D_NQ_NP_817202-MLA43739270372_102020-V.webp"
 },
 {
@@ -12,6 +13,7 @@ const products = [{
     description: "Figuritas del mundial actual",
     price: 200,
     categoryId: 2,
+    stock: 20,
     pictureUrl: "https://http2.mlstatic.com/D_NQ_NP_983866-MLA51493476908_092022-V.webp"
 },
 {
@@ -20,6 +22,7 @@ const products = [{
     description: "Album tapa blanda del mundial Catar 2022",
     price: 999,
     categoryId: 2,
+    stock: 10,
     pictureUrl: "https://http2.mlstatic.com/D_NQ_NP_766731-MLA51361811940_082022-V.webp",
 },
 {
@@ -28,6 +31,7 @@ const products = [{
     description: "Ideal para tus niños",
     price: 6500,
     categoryId: 2,
+    stock: 17,
     pictureUrl: "https://http2.mlstatic.com/D_NQ_NP_630260-MLA49421490835_032022-O.webp",
 },
 {
@@ -36,6 +40,7 @@ const products = [{
     description: "Los mejores 20 exitos del ultimo romantico",
     price: 10000,
     categoryId: 14,
+    stock: 30,
     pictureUrl: "https://http2.mlstatic.com/D_NQ_NP_630263-MLA40254497026_122019-W.webp",
 },
 {
@@ -44,6 +49,7 @@ const products = [{
     description: "Vino tinto de exelente calidad, para compartir con los amigos",
     price: 250,
     categoryId: 14,
+    stock: 15,
     pictureUrl: "https://http2.mlstatic.com/D_NQ_NP_936624-MLA50030295513_052022-V.webp",
 },
 {
@@ -52,6 +58,7 @@ const products = [{
     description: "Camiseta de los pumas talle XL",
     price: 4000,
     categoryId: 32,
+    stock: 50,
     pictureUrl: "https://http2.mlstatic.com/D_NQ_NP_823711-MLA51468530846_092022-V.webp",
 },
 {
@@ -60,6 +67,7 @@ const products = [{
     description: "Con esta deliciosa infusion sos inmune a las patotas en villa gesell",
     price: 1200.95,
     categoryId: 32,
+    stock: 60,
     pictureUrl: "https://http2.mlstatic.com/D_NQ_NP_923062-MLA49399455869_032022-V.webp",
 },
 {
@@ -68,6 +76,7 @@ const products = [{
     description: "Proteina para ganar masa muscular para las milis",
     price: 8000,
     categoryId: 32,
+    stock: 8,
     pictureUrl: "https://http2.mlstatic.com/D_NQ_NP_883313-MLA50043488879_052022-V.webp",
 },
 {
@@ -76,6 +85,7 @@ const products = [{
     description: "Pelota para disfrutar de una tarde en tus estancias en pilar",
     price: 4000,
     categoryId: 32,
+    stock: 44,
     pictureUrl: "https://http2.mlstatic.com/D_NQ_NP_766634-MLA49879521634_052022-V.webp",
 }
 ]

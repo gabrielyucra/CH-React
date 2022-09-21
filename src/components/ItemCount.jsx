@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 
-const ItemCount =({ stock = 5, initial = 1,  onAdd })=>{
+const ItemCount =({ stock, initial,  onAdd })=>{
 
-    const [cantidad, setCantidad] = useState(0);
+    const [cantidad, setCantidad] = useState(initial);
 
         useEffect(() => {
             setCantidad(initial);
@@ -19,6 +19,16 @@ const ItemCount =({ stock = 5, initial = 1,  onAdd })=>{
                 setCantidad(cantidad - 1);
             }
         }
+        const agregarCarrito = () => {
+            if (cantidad !== 0) {
+                alert(`Haz seleccionado ${cantidad} productos`)
+                setCantidad(1);
+                onAdd(cantidad)  //seteo el estado de mi otro componente con el estado del hijo
+            } else {
+                alert("Cantidad no valida")
+                setCantidad(1);
+            }
+        }
 
         return(
             <div className="count">
@@ -27,7 +37,7 @@ const ItemCount =({ stock = 5, initial = 1,  onAdd })=>{
                     <p>{cantidad}</p>
                     <button onClick={sumCant} className="btn btn-secondary">+</button>
                 </div>
-                <button onClick={() => onAdd(cantidad)} className="btn btn-success">Agregar al carrito</button>
+                <button onClick={agregarCarrito} className="btn btn-success">Agregar al carrito</button>
             </div>
         );
 }
