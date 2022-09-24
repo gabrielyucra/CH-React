@@ -12,7 +12,7 @@ const NavBar = ()=>
                 <Link to="category/14"><li>Humildes</li></Link>
                 <Link to="category/2"><li>Niños</li></Link>
             </div>
-            <CartWidget/>
+            <Link to="/cart"><CartWidget/></Link>
         </ul>
     </nav>
     );
