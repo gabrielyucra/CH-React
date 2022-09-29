@@ -9,7 +9,7 @@ const NavBar = ()=>
             <Link to="/"><li>ReacTienda</li></Link>
             <div className='li-order'>
                 <Link to="category/32"><li>Tinchos</li></Link>
-                <Link to="category/14"><li>Humildes</li></Link>
+                <Link to="category/14"><li>Recomendado</li></Link>
                 <Link to="category/2"><li>Niños</li></Link>
             </div>
             <Link to="/cart"><CartWidget/></Link>
