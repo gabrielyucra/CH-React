@@ -8,7 +8,7 @@ import {db} from '../utils/firebaseConfig'
 
 const ItemDetailContainer = () => {
     const[dato,setDato] = useState({})
-    const [cargando, setCargando] = useState(false)
+    const [cargando, setCargando] = useState(true)
     const { id } = useParams();
 
     useEffect(()=> {
@@ -16,16 +16,24 @@ const ItemDetailContainer = () => {
         // .then(result => setDato(result))
         // .catch(err => console.log(err))
         // .finally(()=>setCargando(false))
-        setCargando(true)
+    //     setCargando(true)
+    //     const docRef = doc(db, "products", id);
+    //         getDoc(docRef)
+    //             .then(result => setDato({
+    //                 id: result.id,
+    //                 ...result.data()
+    //             }))
+    //             .finally(()=>setCargando(false))
+    // }, [id])
+
+    const docFetch = async () => {
         const docRef = doc(db, "products", id);
-            getDoc(docRef)
-                .then(result => setDato({
-                    id: result.id,
-                    ...result.data() 
-                }))
-                .finally(()=>setCargando(false))
-        
-    }, [id])
+        const docSnap = await getDoc(docRef);
+        setDato(docSnap.data())
+        setCargando(false)
+    }
+    docFetch()
+}, [id]);
 
     return (
         <div>
