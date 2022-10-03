@@ -16,24 +16,24 @@ const ItemDetailContainer = () => {
         // .then(result => setDato(result))
         // .catch(err => console.log(err))
         // .finally(()=>setCargando(false))
-    //     setCargando(true)
-    //     const docRef = doc(db, "products", id);
-    //         getDoc(docRef)
-    //             .then(result => setDato({
-    //                 id: result.id,
-    //                 ...result.data()
-    //             }))
-    //             .finally(()=>setCargando(false))
-    // }, [id])
-
-    const docFetch = async () => {
+        setCargando(true)
         const docRef = doc(db, "products", id);
-        const docSnap = await getDoc(docRef);
-        setDato(docSnap.data())
-        setCargando(false)
-    }
-    docFetch()
-}, [id]);
+            getDoc(docRef)
+                .then(result => setDato({
+                    id: result.id,
+                    ...result.data()
+                }))
+                .finally(()=>setCargando(false))
+    }, [id])
+
+//     const docFetch = async () => {
+//         const docRef = doc(db, "products", id);
+//         const docSnap = await getDoc(docRef);
+//         setDato(docSnap.data())
+//         setCargando(false)
+//     }
+//     docFetch()
+// }, [id]);
 
     return (
         <div>

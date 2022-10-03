@@ -1,17 +1,24 @@
-import { serverTimestamp } from 'firebase/firestore';
+import { serverTimestamp, doc, setDoc, collection, increment, updateDoc } from 'firebase/firestore';
 import { useContext } from 'react';
 import { CartContext } from './CartContext';
 import { Link } from 'react-router-dom';
+import {db} from "../utils/firebaseConfig"
 
 const Cart = () => {
 
     const ctx = useContext(CartContext);
 
-    const {cartList,removeItem, subtotalEachProd, subtotalPrice, calcIVA, totalPrice} = useContext(CartContext)
+    const {cartList,removeItem, subtotalEachProd, subtotalPrice, calcIVA, totalPrice, clear} = useContext(CartContext)
 
-    
+    const createOrder= async()=>{
 
-    const createOrder=()=>{
+        let itemsFromDB = cartList.map(product => ({
+            id: product.id,
+            title: product.title,
+            price: product.price,
+            quantity: product.cantidad
+        }))
+
         let order = {
             buyer: {
                 name: "Comprador",
@@ -19,10 +26,22 @@ const Cart = () => {
                 email: "juan@juan.com"
             },
             date: serverTimestamp(),
-            items: cartList,
+            items: itemsFromDB,
             total: totalPrice()
         }
         console.log(order)
+        const newOrder = doc(collection(db, "orders"))
+        await setDoc(newOrder, order)
+
+        cartList.forEach(async (product) => {
+            const productRef = doc(db, "products", product.id)
+            await updateDoc(productRef, {
+                stock: increment(-product.cantidad)
+            })
+        });
+
+        clear()
+        alert("compra exitosa")
     }
 
     if(cartList.length === 0) {
@@ -40,7 +59,7 @@ const Cart = () => {
     return (
         <>
             <h2>I'm a cart</h2>
-            <button onClick={ctx.clear}>Borrar todo</button>
+            <button onClick={clear}>Borrar todo</button>
             <div>
                 {
                     ctx.cartList.map(item =>
@@ -49,7 +68,7 @@ const Cart = () => {
                             <img src={item.pictureUrl} alt="item"></img>
                             <h2>Cantidad seleccionada: {item.cantidad}</h2>
                             <h3>{item.description}</h3>
-                            <p className="card-text">Subtotal: ${subtotalEachProd(item.id)}</p>
+                            <p>Subtotal: ${subtotalEachProd(item.id)}</p>
                             <button onClick={() => removeItem(item.id)} className='btn btn-danger'>Eliminar producto</button>
                         </div>
                     )
