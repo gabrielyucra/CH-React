@@ -15,18 +15,22 @@ const ItemDetail = ({item}) => {
     }
 
     return (
-        <div className='item-d'>
-            <img src={item.pictureUrl} alt="foto" />
+        <div className='detail'>
             <div>
+                <img className='img-detail' src={item.pictureUrl} alt="foto" />
+            </div>
+            <div className='aside-detail text-center'>
                 <h1>{item.title}</h1>
                 <h3>{item.description}</h3>
                 <h4>${item.price}</h4>
                 <h4>Stock: {item.stock}</h4>
-                {
-                    itemCount === 0
-                    ? <ItemCount initial={itemCount} stock={item.stock} onAdd={onAdd} />
-                    : <Link to="/cart"><button className="btn btn-dark">Revisar el carrito</button></Link>
-                }
+                <div className='i-count'>
+                    {
+                        itemCount === 0
+                            ? <ItemCount initial={itemCount} stock={item.stock} onAdd={onAdd} />
+                            : <Link to="/cart"><button className="btn btn-dark">Revisar el carrito</button></Link>
+                    }
+                </div>
             </div>
         </div>
     );

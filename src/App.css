@@ -4,7 +4,7 @@
   list-style: none;
 }
 body{
-  background-color: rgb(233, 223, 223);
+  background-color: #f1e0e0;
 }
 a{
   text-decoration: none;
@@ -37,40 +37,43 @@ ul{
   padding: 16px;
 }
 
-img{
+.cart-img{
   padding: 10px;
-  margin-right: 15px;
+  margin-right: 16px;
+}
+.cant-item-cart-w{
+  position: absolute;
+  background-color: rgb(218, 18, 18);
+  top: 10px;
+  right: 3px;
+  border-radius: 100%;
+  padding: 3px 9px;
+  font-size: 15px;
+  color: #ffffff;
+  margin-right: 16px;
 }
 /* -------NAVBAR-------------------------------------------//////////////*/
+
+
 p{
   margin: 0 15px;
 }
 .item{
   display: flex;
+  margin: 25px 10px;
 }
 .item img{
   height: 250px;
   width: 200px;
 }
 
-.item-d{
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.item-d >div{
-  display: flex;
-  flex-direction: column;
-}
-
-.item-d div h3{
-  margin: 20px 0;
-}
-
 .count{
   display: flex;
   flex-direction: column;
   width: 150px;
+    /* flex-direction: row;
+    place-items: center;
+    margin: 10px; */
 }
 
 .count div{
@@ -78,13 +81,68 @@ p{
   justify-content: space-between;
 }
 
-.cant-item-cart-w{
-  position: absolute;
-  background-color: rgb(218, 18, 18);
-  top: 10px;
-  right: 12px;
-  border-radius: 100%;
-  padding: 3px 9px;
-  font-size: 15px;
-  color: #ffffff;
+
+
+.item-list{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}
+.center{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.product-cart{
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-areas: "productos aside";
+}
+
+.productos{
+  grid-area: productos;
+}
+
+.aside-cart{
+  grid-area: aside;
+}
+
+.orden-compra{
+  position: sticky;
+  top: 90px;
+}
+
+/* .detail{
+  display: grid;
+  grid-template-columns: 70% 30%;
+  grid-template-areas: 
+  "img detail";
+}
+
+.img-detail{
+  grid-area: img;
+}
+
+.aside-detail{
+  grid-area: detail;
+} */
+
+.detail{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.img-detail{
+  height: 85vh;
+  width: 80vh;
+}
+
+.i-count{
+  display: flex;
+  justify-content: center;
 }

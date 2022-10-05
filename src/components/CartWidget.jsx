@@ -7,14 +7,15 @@ const CartWidget = ()=>{
     while(cartList.length === 0) {
         return(
             <>
-                <img src="https://img.icons8.com/ios-filled/50/000000/shopping-cart.png" alt="logo de carrito" />
+                <img className="cart-img" src="https://img.icons8.com/ios-filled/50/000000/shopping-cart.png"
+                alt="logo de carrito" />
             </>
         );
     }
 
     return (
         <div>
-            <img src="https://img.icons8.com/ios-filled/50/000000/shopping-cart.png"/>
+            <img className="cart-img" src="https://img.icons8.com/ios-filled/50/000000/shopping-cart.png"/>
             <span className="cant-item-cart-w">{totalProducts()}</span>
         </div>
     );
