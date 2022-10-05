@@ -94,7 +94,7 @@ const Cart = () => {
                     </div>
                     <button onClick={createOrder} className='btn btn-success'>Terminar compra</button>
                 </div>
-                <button className='btn btn-danger ms-5 mt-3'>Limpiar carrito</button>
+                <button onClick={clear} className='btn btn-danger ms-5 mt-3'>Limpiar carrito</button>
                 </div>
             </div>
         </div>

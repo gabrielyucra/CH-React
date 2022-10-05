@@ -30,7 +30,7 @@ const CartContextProvider = ({children}) => {
 
     const subtotalPrice = () => {
         let total = cartList.map(product => subtotalEachProd(product.id))
-        return total.reduce((previousValue, currentValue) => previousValue + currentValue), 0;
+        return total.reduce((previousValue, currentValue) => previousValue + currentValue);
     }
 
     const calcIVA = () => {
