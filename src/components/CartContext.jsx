@@ -21,7 +21,7 @@ const CartContextProvider = ({children}) => {
     const removeItem =(id)=> setCartList(cartList.filter(product => product.id !== id))
 
     const clear =()=> setCartList([])
-    const isInCart = (id) => cartList.find(product => product.id === parseInt(id)) ? true : false;
+    const isInCart = (id) => cartList.find(product => product.id == parseInt(id)) ? true : false;
 
     const subtotalEachProd = (id) => {
         let index = cartList.map(product => product.id).indexOf(id);
