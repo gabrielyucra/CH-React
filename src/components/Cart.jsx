@@ -38,7 +38,7 @@ const Cart = () => {
         });
 
         clear()
-        alert("compra exitosa")
+        alert(`compra exitosa , el ID de su compra es: ${newOrder.id}` )
     }
 
     if(cartList.length === 0) {
